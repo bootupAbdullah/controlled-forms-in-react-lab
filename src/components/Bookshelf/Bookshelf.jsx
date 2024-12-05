@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const Bookshelf = (props) => {
-    const [books, apple] = useState([
+    const [books, setBooks] = useState([
       ]);
     
     const [newBook, setNewBook] = useState({
@@ -17,10 +17,10 @@ const Bookshelf = (props) => {
         event.preventDefault();
         console.log(newBook)
         // setBooks([{...books, newBook}])
-        apple((banana) => [...banana, newBook])
+        setBooks((banana) => [...banana, newBook]) //glen helpmed me with this
         setNewBook({title: '', author: ''})
     }
-useEffect(() => {
+useEffect(() => { //glen helped me with this
     console.log(books)
 }, [books])
     return (
